@@ -1,15 +1,12 @@
-import { useState } from 'react';
 import './App.css';
 import ListOfCharacters from './components/ListOfCharacters';
 
 function App() {
-  const [dato, setDato] = useState(1)
+  
   return (
     <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <button className="btn btn-outline-light mb-3" onClick={() => setDato(dato+1)}>ADD</button>
-      <button className="btn btn-outline-info mb-3" onClick={() => setDato(1)}>RESET</button>
       <ListOfCharacters
-        limits={dato}
+        limits={5}
       />
       {/* <header className="mb-auto">
         <div>
