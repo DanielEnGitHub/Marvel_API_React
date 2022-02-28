@@ -3,12 +3,12 @@ import Characters from '../components/Characters';
 import getCharacters from '../services/getCharacters';
 import {useState, useEffect} from 'react';
 
-const ListOfCharacters = ({ name='capitan' }) => {
+const ListOfCharacters = ({ limits=10 }) => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    getCharacters({name}).then(res => setData(res));
-  }, [name])
+    getCharacters({limits}).then(res => setData(res));
+  }, [limits])
 
   return (
     <section className='app-content'>

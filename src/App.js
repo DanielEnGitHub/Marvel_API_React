@@ -3,19 +3,13 @@ import './App.css';
 import ListOfCharacters from './components/ListOfCharacters';
 
 function App() {
-  const [dato, setDato] = useState({
-    name: '1',
-    keyword: '1',
-  })
+  const [dato, setDato] = useState(1)
   return (
     <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <input type='text' className='form-control mb-3' name='name' onChange={e => setDato({...dato, [e.target.name] : e.target.value})}/>
-
-      <button className="btn btn-outline-secondary mb-3" onClick={() => setDato({...dato, keyword: dato.name })}>CLICK</button>
-      {/* <button className="btn btn-outline-light mb-3" onClick={() => setDato(dato+1)}>ADD</button>
-      <button className="btn btn-outline-info mb-3" onClick={() => setDato(1)}>RESET</button> */}
+      <button className="btn btn-outline-light mb-3" onClick={() => setDato(dato+1)}>ADD</button>
+      <button className="btn btn-outline-info mb-3" onClick={() => setDato(1)}>RESET</button>
       <ListOfCharacters
-        name={dato.keyword}
+        limits={dato}
       />
       {/* <header className="mb-auto">
         <div>
